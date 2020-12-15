@@ -6,7 +6,7 @@ const ConditionalRendering = {
   },
     methods: {
     swapVisibility() {
-      this.message = xor(this.message);
+      this.seen = xor(this.seen);
     }
 };
 
