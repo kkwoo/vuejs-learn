@@ -7,9 +7,13 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="counter">
-      Counter: {{ counter }}
+    <div id="bind-attribute">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound
+        title!
+      </span>
     </div>
+
     <script src="https://unpkg.com/vue@next"></script>
     <script src="script.js"></script>
   </body>

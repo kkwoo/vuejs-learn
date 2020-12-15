@@ -1,9 +1,9 @@
-const Counter = {
+const AttributeBinding = {
   data() {
     return {
-      counter: 0
+      message: 'You loaded this page on ' + new Date().toLocaleString()
     }
   }
 }
 
-Vue.createApp(Counter).mount('#counter')
+Vue.createApp(AttributeBinding).mount('#bind-attribute')
