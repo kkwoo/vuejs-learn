@@ -1,15 +1,13 @@
-const ConditionalRendering = {
+const ListRendering = {
   data() {
     return {
-      seen: true,
-      text: "mvp"
+      todos: [
+        { text: 'Learn JavaScript' },
+        { text: 'Learn Vue' },
+        { text: 'Build something awesome' }
+      ]
     }
-  },
-    methods: {
-      swapVisibility() {
-        this.seen = !(this.seen);
-      }
-    }
-};
+  }
+}
 
-Vue.createApp(ConditionalRendering).mount('#conditional-rendering');
+Vue.createApp(ListRendering).mount('#list-rendering')
