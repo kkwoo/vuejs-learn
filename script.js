@@ -1,18 +1,20 @@
-const ListRendering = {
+const TodoList = {
   data() {
     return {
-      todos: [
-        { text: 'Learn JavaScript' },
-        { text: 'Learn Vue' },
-        { text: 'Build something awesome' }
+      groceryList: [
+        { id: 0, text: 'Vegetables' },
+        { id: 1, text: 'Cheese' },
+        { id: 2, text: 'Whatever else humans are supposed to eat' }
       ]
     }
-  },
-    methods: {
-    addFixed() {
-      this.todos.push({text: "one more"});
-    }
   }
-}
+};
 
-Vue.createApp(ListRendering).mount('#list-rendering')
+const app = Vue.createApp(TodoList);
+
+app.component('todo-item', {
+  props: ['todo'],
+  template: `<li>{{ todo.text }}</li>`
+});
+
+app.mount('#todo-list-app');
