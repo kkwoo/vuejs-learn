@@ -8,6 +8,8 @@
   </head>
   <body>
       <div id="list-rendering">
+        <button v-on:click="addFixed">add fixed item</button>
+        <br/>
         <ol>
           <li v-for="todo in todos">
             {{ todo.text }}

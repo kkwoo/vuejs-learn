@@ -7,6 +7,11 @@ const ListRendering = {
         { text: 'Build something awesome' }
       ]
     }
+  },
+    methods: {
+    addFixed() {
+      this.todos.push({text: "one more"});
+    }
   }
 }
 
