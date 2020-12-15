@@ -1,12 +1,14 @@
 const ConditionalRendering = {
   data() {
     return {
-      seen: false
+      seen: true,
+      text: "mvp"
     }
   },
     methods: {
     swapVisibility() {
       this.seen = !(this.seen);
+    }
     }
 };
 
