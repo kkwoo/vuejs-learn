@@ -6,9 +6,9 @@ const ConditionalRendering = {
     }
   },
     methods: {
-    swapVisibility() {
-      this.seen = !(this.seen);
-    }
+      swapVisibility() {
+        this.seen = !(this.seen);
+      }
     }
 };
 
