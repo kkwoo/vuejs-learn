@@ -1,17 +1,9 @@
-const TwoWayBinding = {
+const ConditionalRendering = {
   data() {
     return {
-      message: 'Hello Vue!'
-    }
-  },
-    methods: {
-    reverseMessage() {
-      this.message = this.message
-        .split('')
-        .reverse()
-        .join('')
+      seen: false
     }
   }
-}
+};
 
-Vue.createApp(TwoWayBinding).mount('#two-way-binding')
+Vue.createApp(ConditionalRendering).mount('#conditional-rendering');
