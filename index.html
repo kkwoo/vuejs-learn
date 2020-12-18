@@ -8,7 +8,8 @@
   </head>
   <body>
     <div id="conditional-rendering">
-      <span v-if="seen">Now you see me</span><br/>
+      <span v-if="seen"><button>Now you see me</button></span>
+      <span v-if="!seen"><button>Now you see something else</button></span><br/>
       <span>
         <button v-on:click="swapVisibility">Reverse Visibility</button>
       </span><br/>
