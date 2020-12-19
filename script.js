@@ -1,11 +1,12 @@
 const CounterApp = {
   data() {
     return {
-      counter: 0
+      counter: 0,
+      timer: ""
     }
-  },
+  }, 
   mounted() {
-    setInterval(() => {
+    timer = setInterval(() => {
       this.counter++
     }, 1000)
   }
