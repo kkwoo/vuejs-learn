@@ -3,21 +3,21 @@ const CounterApp = {
     return {
       counter: 0,
       timer: "",
-      timerStatusToggle: "Start"
+      timerAction: "Start"
     }
   }, 
   methods: {
     stopTimer() {
       clearInterval(this.timer);
       this.timer = "";
-      this.timerStatusToggle = "Start";
+      this.timerAction = "Start";
     },
     startTimer() {
       this.counter = 0;
       this.timer = setInterval(() => {
         this.counter++
-      }, 1000);
-      this.timerStatusToggle = "Stop";
+      }, 100);
+      this.timerAction = "Stop";
     },
     toggleTimer() {
       (this.timer === "") ? this.startTimer() : this.stopTimer();

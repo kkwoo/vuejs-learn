@@ -8,8 +8,8 @@
   </head>
   <body>
     <div id="counter">
-      Counter: {{ counter }}
-      <button v-on:click="toggleTimer">{{ timerStatusToggle }}</button>
+      Counter: {{ Math.floor(counter / 10) }}.{{ counter % 10 }}
+      <button v-on:click="toggleTimer">{{ timerAction }}</button>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="script.js"></script>
