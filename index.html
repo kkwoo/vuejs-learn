@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div id="counter">
-      Counter: {{ Math.floor(counter / 10) }}.{{ counter % 10 }}
-      <button v-on:click="toggleTimer">{{ timerAction }}</button>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="counter">
+		<button v-on:click="toggleTimer">{{ timerAction }}</button><br/>
+    <ol>
+      <li v-for="counter in counters">
+        Counter: {{ timerDisplay }}
+      </li>
+    </ol>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="script.js"></script>
