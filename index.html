@@ -12,10 +12,11 @@
 	<div id="counter">
 		<button v-on:click="toggleTimer">{{ timerAction }}</button><br/>
     <ol>
-      <li v-for="counter in counters">
-        Counter: {{ timerDisplay }}
+      <li v-for="counter in counters" :key="timerDisplay.id">
+        Counter: {{ counter.value }}
       </li>
     </ol>
+    Counter: {{ currentCounter }}
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="script.js"></script>

@@ -10,12 +10,13 @@ const CounterApp = {
   methods: {
     stopTimer() {
       clearInterval(this.timer);
+      const storedVal = this.currentCounter;
+      this.counters.push({id: this.counters.length+1, value: storedVal});
       this.timer = "";
       this.timerAction = "Start";
     },
     startTimer() {
       this.currentCounter = 0;
-      this.counters.push(this.currentCounter);
       this.timer = setInterval(() => {
         this.currentCounter++;
       }, 100);
