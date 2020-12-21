@@ -25,6 +25,12 @@ const CounterApp = {
     },
     toggleTimer() {
       (this.timer === "") ? this.startTimer() : this.stopTimer();
+    },
+    gapiSignOut() {
+      this.authorised = !(this.authorised);
+    },
+    gapiAuthorise() {
+      this.authorised = !(this.authorised);
     }
   },
   computed: {
