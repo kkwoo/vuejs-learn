@@ -10,8 +10,8 @@
 
 <body>
 	<div id="counter">
-    <button>Authorise</button>
-    <button>Sign Out</button>
+      <span v-if="authorised"><button>Sign Out</button></span>
+      <span v-if="!authorised"><button>Authorise</button></span><br/>
     <br/>
     Counter: {{ timerDisplay }}
 		<button v-on:click="toggleTimer">{{ timerAction }}</button><br/>

@@ -4,6 +4,7 @@ const CounterApp = {
       counters: [],
       currentCounter: 0,
       timer: "",
+      authorised: false,
       timerAction: "Start"
     }
   }, 
