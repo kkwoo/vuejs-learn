@@ -28,10 +28,27 @@ const CounterApp = {
     },
     gapiSignOut() {
       this.authorised = !(this.authorised);
+      gapi.auth2.getAuthInstance().signOut();
     },
     gapiAuthorise() {
       this.authorised = !(this.authorised);
-    }
+      gapi.auth2.getAuthInstance().signIn();
+    },
+    initClient() {
+      gapi.client.init({
+        clientId: clientParms.CLIENT_ID,
+        discoveryDocs: clientParms.DISCOVERY_DOCS,
+        scope: clientParms.SCOPES
+      }).then(function () {
+        // Listen for sign-in state changes.
+        gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
+
+        // Handle the initial sign-in state.
+        this.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+      }, function(error) {
+        appendPre(JSON.stringify(error, null, 2));
+      });
+    },
   },
   computed: {
     timerDisplay() {
@@ -40,8 +57,8 @@ const CounterApp = {
   },
   mounted() {
     this.startTimer();
+    gapi.load('client:auth2', this.initClient);
   }
 }
-
 
 Vue.createApp(CounterApp).mount('#counter')

@@ -10,8 +10,8 @@
 
 <body>
 	<div id="counter">
-      <span v-if="authorised" v-on:click="gapiSignOut"><button>Sign Out</button></span>
-      <span v-if="!authorised" v-on:click="gapiAuthorise"><button>Authorise</button></span><br/>
+      <span v-if="authorised" v-on:click="gapiSignOut" id="signout_button"><button>Sign Out</button></span>
+      <span v-if="!authorised" v-on:click="gapiAuthorise" id="authorize_button"><button>Authorise</button></span><br/>
     <br/>
     Counter: {{ timerDisplay }}
 		<button v-on:click="toggleTimer">{{ timerAction }}</button><br/>
@@ -21,8 +21,12 @@
       </li>
     </ol>
     </div>
+    <div id="content"></div>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src="script.js"></script>
+    <script src="gapiHelpers.js"></script>
+    <script src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+    <script src="vueApp.js"></script>
   </body>
 </html>
