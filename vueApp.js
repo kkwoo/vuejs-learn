@@ -4,6 +4,7 @@ const CounterApp = {
       counters: [],
       currentCounter: 0,
       timer: "",
+      time: 0,
       authorised: false,
       timerAction: "Start"
     }
@@ -17,6 +18,7 @@ const CounterApp = {
       this.timerAction = "Start";
     },
     startTimer() {
+      this.time = Date.now();
       this.currentCounter = 0;
       this.timer = setInterval(() => {
         this.currentCounter++;
@@ -24,7 +26,12 @@ const CounterApp = {
       this.timerAction = "Stop";
     },
     toggleTimer() {
-      (this.timer === "") ? this.startTimer() : this.stopTimer();
+      if (this.timer === "") {
+        this.startTimer();
+      } else {
+        this.stopTimer();
+        outside.eventuallyAddEvent({start: this.time, end: Date.now()});
+      }
     },
     gapiSignOut() {
       this.authorised = !(this.authorised);

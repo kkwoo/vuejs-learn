@@ -108,3 +108,9 @@ function listPrototype() {
   });
 }
 
+let outside = {
+    eventuallyAddEvent: ({start, end}) => {
+      console.log(start);
+      console.log(end);
+      }
+};
